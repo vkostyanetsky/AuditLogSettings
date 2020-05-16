@@ -1,0 +1,956 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.9">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>None</CommandBarLocation>
+	<CommandSet>
+		<ExcludedCommand>Help</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="FormCommandBar" id="-1"/>
+	<Events>
+		<Event name="OnOpen">OnOpen</Event>
+		<Event name="OnCreateAtServer">OnCreateAtServer</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="GroupInterface" id="36">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Interface</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Интерфейс</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupInterfaceExtendedTooltip" id="37"/>
+			<ChildItems>
+				<Table name="MetadataObjectsTree" id="1">
+					<Representation>Tree</Representation>
+					<ReadOnly>true</ReadOnly>
+					<ChangeRowSet>false</ChangeRowSet>
+					<AutoInsertNewRow>true</AutoInsertNewRow>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>MetadataObjectsTree</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Metadata Objects Tree</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Дерево объектов метаданных</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSet>
+						<ExcludedCommand>Add</ExcludedCommand>
+						<ExcludedCommand>Change</ExcludedCommand>
+						<ExcludedCommand>Copy</ExcludedCommand>
+						<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+						<ExcludedCommand>Delete</ExcludedCommand>
+						<ExcludedCommand>EndEdit</ExcludedCommand>
+						<ExcludedCommand>HierarchicalList</ExcludedCommand>
+						<ExcludedCommand>List</ExcludedCommand>
+						<ExcludedCommand>MoveDown</ExcludedCommand>
+						<ExcludedCommand>MoveUp</ExcludedCommand>
+						<ExcludedCommand>OutputList</ExcludedCommand>
+						<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+						<ExcludedCommand>SelectAll</ExcludedCommand>
+						<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+						<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+						<ExcludedCommand>SortListAsc</ExcludedCommand>
+						<ExcludedCommand>SortListDesc</ExcludedCommand>
+						<ExcludedCommand>Tree</ExcludedCommand>
+					</CommandSet>
+					<ContextMenu name="MetadataObjectsTreeContextMenu" id="2">
+						<ChildItems>
+							<ButtonGroup name="MetadataObjectsTreeContextMenuGroupChangeSettings" id="136">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Metadata Objects Tree Context Menu: Change Settings</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Контекстное меню дерева объектов метаданных: Изменить настройки</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="MetadataObjectsTreeContextMenuGroupChangeSettingsExtendedTooltip" id="137"/>
+								<ChildItems>
+									<Button name="MetadataObjectsTreeContextMenuEnableAuditLog" id="140">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.EnableAuditLog</CommandName>
+										<ExtendedTooltip name="MetadataObjectsTreeContextMenuEnableAuditLogExtendedTooltip" id="141"/>
+									</Button>
+									<Button name="MetadataObjectsTreeContextMenuDisableAuditLog" id="138">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.DisableAuditLog</CommandName>
+										<ExtendedTooltip name="MetadataObjectsTreeContextMenuDisableAuditLogExtendedTooltip" id="139"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<Button name="MetadataObjectsTreeContextMenuResetSettings" id="134">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.SetDefaultMetadataSettings</CommandName>
+								<ExtendedTooltip name="MetadataObjectsTreeContextMenuResetSettingsExtendedTooltip" id="135"/>
+							</Button>
+						</ChildItems>
+					</ContextMenu>
+					<AutoCommandBar name="MetadataObjectsTreeCommandBar" id="3">
+						<ChildItems>
+							<ButtonGroup name="MetadataObjectsMainCommands" id="165">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Metadata Objects: Main Commands</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Объекты метаданных: Основные команды</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="MetadataObjectsMainCommandsExtendedTooltip" id="166"/>
+								<ChildItems>
+									<Button name="FormRefreshSettings" id="59">
+										<Type>CommandBarButton</Type>
+										<DefaultButton>true</DefaultButton>
+										<CommandName>Form.Command.RefreshSettings</CommandName>
+										<ExtendedTooltip name="FormRefreshSettingsExtendedTooltip" id="60"/>
+									</Button>
+									<Button name="FormEnableAuditLog" id="142">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.EnableAuditLog</CommandName>
+										<ExtendedTooltip name="FormEnableAuditLogExtendedTooltip" id="143"/>
+									</Button>
+									<Button name="FormDisableAuditLog" id="144">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.DisableAuditLog</CommandName>
+										<ExtendedTooltip name="FormDisableAuditLogExtendedTooltip" id="145"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<ButtonGroup name="MetadataObjectsDefaultSettings" id="163">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Metadata Objects: Default Settings</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Объекты метаданных: Настройки по умолчанию</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="MetadataObjectsDefaultSettingsExtendedTooltip" id="164"/>
+								<ChildItems>
+									<Button name="FormSetDefaultMetadataSettings" id="146">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.SetDefaultMetadataSettings</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="FormSetDefaultMetadataSettingsExtendedTooltip" id="147"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+							<ButtonGroup name="MetadataObjectsStandardCommands" id="167">
+								<Title>
+									<v8:item>
+										<v8:lang>en</v8:lang>
+										<v8:content>Metadata Objects: Standard Commands</v8:content>
+									</v8:item>
+									<v8:item>
+										<v8:lang>ru</v8:lang>
+										<v8:content>Объекты метаданных: Стандартные команды</v8:content>
+									</v8:item>
+								</Title>
+								<ExtendedTooltip name="MetadataObjectsStandardCommandsExtendedTooltip" id="168"/>
+								<ChildItems>
+									<Button name="MetadataObjectsTreeChangeForm" id="169">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+										<ExtendedTooltip name="MetadataObjectsTreeChangeFormExtendedTooltip" id="170"/>
+									</Button>
+								</ChildItems>
+							</ButtonGroup>
+						</ChildItems>
+					</AutoCommandBar>
+					<ExtendedTooltip name="MetadataObjectsTreeExtendedTooltip" id="4"/>
+					<SearchStringAddition name="MetadataObjectsTreeSearchString" id="5">
+						<AdditionSource>
+							<Item>MetadataObjectsTree</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="MetadataObjectsTreeSearchStringContextMenu" id="6"/>
+						<ExtendedTooltip name="MetadataObjectsTreeSearchStringExtendedTooltip" id="7"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="MetadataObjectsTreeViewStatus" id="8">
+						<AdditionSource>
+							<Item>MetadataObjectsTree</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="MetadataObjectsTreeViewStatusContextMenu" id="9"/>
+						<ExtendedTooltip name="MetadataObjectsTreeViewStatusExtendedTooltip" id="10"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="MetadataObjectsTreeSearchControl" id="11">
+						<AdditionSource>
+							<Item>MetadataObjectsTree</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="MetadataObjectsTreeSearchControlContextMenu" id="12"/>
+						<ExtendedTooltip name="MetadataObjectsTreeSearchControlExtendedTooltip" id="13"/>
+					</SearchControlAddition>
+					<Events>
+						<Event name="Selection">MetadataObjectsTreeSelection</Event>
+						<Event name="OnActivateRow">MetadataObjectsTreeOnActivateRow</Event>
+					</Events>
+					<ChildItems>
+						<ColumnGroup name="MetadataObjectsTreePictureAndPresentation" id="14">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Metadata Objects Tree: Picture and Presentation</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Дерево объектов метаданных: Картинка и представление
+</v8:content>
+								</v8:item>
+							</Title>
+							<Group>InCell</Group>
+							<ExtendedTooltip name="MetadataObjectsTreePictureAndPresentationExtendedTooltip" id="15"/>
+							<ChildItems>
+								<PictureField name="MetadataObjectsTreePicture" id="19">
+									<DataPath>MetadataObjectsTree.Picture</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="MetadataObjectsTreePictureContextMenu" id="20"/>
+									<ExtendedTooltip name="MetadataObjectsTreePictureExtendedTooltip" id="21"/>
+								</PictureField>
+								<InputField name="MetadataObjectsTreePresentation" id="22">
+									<DataPath>MetadataObjectsTree.Presentation</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="MetadataObjectsTreePresentationContextMenu" id="23"/>
+									<ExtendedTooltip name="MetadataObjectsTreePresentationExtendedTooltip" id="24"/>
+								</InputField>
+							</ChildItems>
+						</ColumnGroup>
+						<PictureField name="MetadataObjectsTreeInfobaseSettingsPicture" id="54">
+							<DataPath>MetadataObjectsTree.InfobaseSettingsPicture</DataPath>
+							<UserVisible>
+								<xr:Common>false</xr:Common>
+							</UserVisible>
+							<TitleLocation>None</TitleLocation>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Infobase Settings</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки инфобазы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<EditMode>EnterOnInput</EditMode>
+							<HeaderPicture>
+								<xr:Ref>StdPicture.SettingsStorage</xr:Ref>
+								<xr:LoadTransparent>true</xr:LoadTransparent>
+							</HeaderPicture>
+							<ContextMenu name="MetadataObjectsTreeInfobaseSettingsPictureContextMenu" id="55"/>
+							<ExtendedTooltip name="MetadataObjectsTreeInfobaseSettingsPictureExtendedTooltip" id="56"/>
+						</PictureField>
+					</ChildItems>
+				</Table>
+				<UsualGroup name="GroupMetadataObject" id="52">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Metadata Object</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект метаданных</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="GroupMetadataObjectExtendedTooltip" id="53"/>
+					<ChildItems>
+						<LabelField name="MetadataObjectPresentation" id="46">
+							<DataPath>Items.MetadataObjectsTree.CurrentData.Presentation</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<Font ref="style:LargeTextFont" kind="StyleItem"/>
+							<ContextMenu name="MetadataObjectPresentationContextMenu" id="47"/>
+							<ExtendedTooltip name="MetadataObjectPresentationExtendedTooltip" id="48"/>
+						</LabelField>
+						<LabelDecoration name="DecorationSelectMetadataObject" id="68">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Select a metadata object, please.</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пожалуйста, выберите объект метаданных.</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="DecorationSelectMetadataObjectContextMenu" id="69"/>
+							<ExtendedTooltip name="DecorationSelectMetadataObjectExtendedTooltip" id="70"/>
+						</LabelDecoration>
+						<UsualGroup name="GroupMetadataObjectSettings" id="66">
+							<Title>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Metadata Object Settings</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки объекта метаданных</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Vertical</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="GroupMetadataObjectSettingsExtendedTooltip" id="67"/>
+							<ChildItems>
+								<UsualGroup name="GroupCommon" id="132">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Common</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Общее</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<ExtendedTooltip name="GroupCommonExtendedTooltip" id="133"/>
+									<ChildItems>
+										<CheckBoxField name="MetadataObjectEnableAuditLog" id="63">
+											<DataPath>Items.MetadataObjectsTree.CurrentData.EnableAuditLog</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Switcher</CheckBoxType>
+											<ContextMenu name="MetadataObjectEnableAuditLogContextMenu" id="64"/>
+											<ExtendedTooltip name="MetadataObjectEnableAuditLogExtendedTooltip" id="65"/>
+											<Events>
+												<Event name="OnChange">MetadataObjectEnableAuditLogOnChange</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="GroupFieldsUse" id="130">
+									<Title>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Fields Use</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Использование полей</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>NormalSeparation</Representation>
+									<ExtendedTooltip name="GroupFieldsUseExtendedTooltip" id="131"/>
+									<ChildItems>
+										<Table name="MetadataObjectsTreeFields" id="90">
+											<Representation>Tree</Representation>
+											<ChangeRowSet>false</ChangeRowSet>
+											<ChangeRowOrder>false</ChangeRowOrder>
+											<Header>false</Header>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>Items.MetadataObjectsTree.CurrentData.Fields</DataPath>
+											<CommandSet>
+												<ExcludedCommand>Add</ExcludedCommand>
+												<ExcludedCommand>Change</ExcludedCommand>
+												<ExcludedCommand>Copy</ExcludedCommand>
+												<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+												<ExcludedCommand>Delete</ExcludedCommand>
+												<ExcludedCommand>EndEdit</ExcludedCommand>
+												<ExcludedCommand>HierarchicalList</ExcludedCommand>
+												<ExcludedCommand>List</ExcludedCommand>
+												<ExcludedCommand>MoveDown</ExcludedCommand>
+												<ExcludedCommand>MoveUp</ExcludedCommand>
+												<ExcludedCommand>OutputList</ExcludedCommand>
+												<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+												<ExcludedCommand>SelectAll</ExcludedCommand>
+												<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+												<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+												<ExcludedCommand>SortListAsc</ExcludedCommand>
+												<ExcludedCommand>SortListDesc</ExcludedCommand>
+												<ExcludedCommand>Tree</ExcludedCommand>
+											</CommandSet>
+											<ContextMenu name="MetadataObjectsTreeFieldsContextMenu" id="91"/>
+											<AutoCommandBar name="MetadataObjectsTreeFieldsCommandBar" id="92">
+												<ChildItems>
+													<Button name="MetadataObjectsTreeFieldsCheckAllFields" id="121">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.CheckAllFields</CommandName>
+														<ExtendedTooltip name="MetadataObjectsTreeFieldsCheckAllFieldsExtendedTooltip" id="122"/>
+													</Button>
+													<Button name="MetadataObjectsTreeFieldsUncheckAllFields" id="125">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.UncheckAllFields</CommandName>
+														<ExtendedTooltip name="MetadataObjectsTreeFieldsUncheckAllFieldsExtendedTooltip" id="126"/>
+													</Button>
+													<ButtonGroup name="MetadataObjectsTreeFieldsGroupExpandCollapse" id="123">
+														<Title>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Metadata Objects Tree Fields: Expand and Collapse</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Поля дерева объектов метаданных: Развернуть и свернуть</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="MetadataObjectsTreeFieldsGroupExpandCollapseExtendedTooltip" id="124"/>
+														<ChildItems>
+															<Button name="MetadataObjectsTreeFieldsExpandAllFields" id="119">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.ExpandAllFields</CommandName>
+																<ExtendedTooltip name="MetadataObjectsTreeFieldsExpandAllFieldsExtendedTooltip" id="120"/>
+															</Button>
+															<Button name="MetadataObjectsTreeFieldsCollapseAllFields" id="117">
+																<Type>CommandBarButton</Type>
+																<CommandName>Form.Command.CollapseAllFields</CommandName>
+																<ExtendedTooltip name="MetadataObjectsTreeFieldsCollapseAllFieldsExtendedTooltip" id="118"/>
+															</Button>
+														</ChildItems>
+													</ButtonGroup>
+												</ChildItems>
+											</AutoCommandBar>
+											<ExtendedTooltip name="MetadataObjectsTreeFieldsExtendedTooltip" id="93"/>
+											<SearchStringAddition name="MetadataObjectsTreeFieldsSearchString" id="94">
+												<AdditionSource>
+													<Item>MetadataObjectsTreeFields</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="MetadataObjectsTreeFieldsSearchStringContextMenu" id="95"/>
+												<ExtendedTooltip name="MetadataObjectsTreeFieldsSearchStringExtendedTooltip" id="96"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="MetadataObjectsTreeFieldsViewStatus" id="97">
+												<AdditionSource>
+													<Item>MetadataObjectsTreeFields</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="MetadataObjectsTreeFieldsViewStatusContextMenu" id="98"/>
+												<ExtendedTooltip name="MetadataObjectsTreeFieldsViewStatusExtendedTooltip" id="99"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="MetadataObjectsTreeFieldsSearchControl" id="100">
+												<AdditionSource>
+													<Item>MetadataObjectsTreeFields</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="MetadataObjectsTreeFieldsSearchControlContextMenu" id="101"/>
+												<ExtendedTooltip name="MetadataObjectsTreeFieldsSearchControlExtendedTooltip" id="102"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<CheckBoxField name="MetadataObjectsTreeFieldsEnableAuditLog" id="103">
+													<DataPath>Items.MetadataObjectsTree.CurrentData.Fields.EnableAuditLog</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ThreeState>true</ThreeState>
+													<ContextMenu name="MetadataObjectsTreeFieldsEnableAuditLogContextMenu" id="104"/>
+													<ExtendedTooltip name="MetadataObjectsTreeFieldsEnableAuditLogExtendedTooltip" id="105"/>
+													<Events>
+														<Event name="OnChange">MetadataObjectsTreeFieldsUseOnChange</Event>
+													</Events>
+												</CheckBoxField>
+												<ColumnGroup name="MetadataObjectsTreeFieldsGroupPictureAndPresentation" id="115">
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Metadata Objects Tree Fields: Picture and Presentation</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Поля дерева объектов метаданных: Картинка и представление</v8:content>
+														</v8:item>
+													</Title>
+													<Group>InCell</Group>
+													<ExtendedTooltip name="MetadataObjectsTreeFieldsGroupPictureAndPresentationExtendedTooltip" id="116"/>
+													<ChildItems>
+														<PictureField name="MetadataObjectsTreeFieldsPicture" id="112">
+															<DataPath>Items.MetadataObjectsTree.CurrentData.Fields.Picture</DataPath>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="MetadataObjectsTreeFieldsPictureContextMenu" id="113"/>
+															<ExtendedTooltip name="MetadataObjectsTreeFieldsPictureExtendedTooltip" id="114"/>
+														</PictureField>
+														<InputField name="MetadataObjectsTreeFieldsPresentation" id="109">
+															<DataPath>Items.MetadataObjectsTree.CurrentData.Fields.Presentation</DataPath>
+															<ReadOnly>true</ReadOnly>
+															<EditMode>EnterOnInput</EditMode>
+															<ContextMenu name="MetadataObjectsTreeFieldsPresentationContextMenu" id="110"/>
+															<ExtendedTooltip name="MetadataObjectsTreeFieldsPresentationExtendedTooltip" id="111"/>
+														</InputField>
+													</ChildItems>
+												</ColumnGroup>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="GroupFooter" id="158">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Footer</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подвал</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="GroupFooterExtendedTooltip" id="159"/>
+			<ChildItems>
+				<CheckBoxField name="ShowMetadataObjectNames" id="152">
+					<DataPath>ShowMetadataObjectNames</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Switcher</CheckBoxType>
+					<ContextMenu name="ShowMetadataObjectNamesContextMenu" id="153"/>
+					<ExtendedTooltip name="ShowMetadataObjectNamesExtendedTooltip" id="154"/>
+					<Events>
+						<Event name="OnChange">ShowMetadataObjectNamesOnChange</Event>
+					</Events>
+				</CheckBoxField>
+				<CheckBoxField name="ShowMetadataObjectRecordsNumber" id="160">
+					<DataPath>ShowMetadataObjectRecordsNumber</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Switcher</CheckBoxType>
+					<ContextMenu name="ShowMetadataObjectRecordsNumberContextMenu" id="161"/>
+					<ExtendedTooltip name="ShowMetadataObjectRecordsNumberExtendedTooltip" id="162"/>
+					<Events>
+						<Event name="OnChange">ShowMetadataObjectRecordsNumberOnChange</Event>
+					</Events>
+				</CheckBoxField>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Object" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.AuditLogSettings</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="MetadataObjectsTree" id="2">
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Name" id="1">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Presentation" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Presentation</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Picture" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="EnableAuditLog" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Enable Audit Log</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Включить историю данных</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="IsCollection" id="11">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="InfobaseSettingsPicture" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Infobase Settings Picture</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка настроек информационной базы</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Fields" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Fields</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поля</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:ValueTree</v8:Type>
+					</Type>
+				</Column>
+				<AdditionalColumns table="MetadataObjectsTree.Fields">
+					<Column name="EnableAuditLog" id="1">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Enable Audit Log</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Включить историю данных</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>1</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
+					</Column>
+					<Column name="Name" id="2">
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Presentation" id="3">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Presentation</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Представление</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="Picture" id="4">
+						<Title>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Picture</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Картинка</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>v8ui:Picture</v8:Type>
+						</Type>
+					</Column>
+					<Column name="IsCollection" id="5">
+						<Type>
+							<v8:Type>xs:boolean</v8:Type>
+						</Type>
+					</Column>
+				</AdditionalColumns>
+			</Columns>
+		</Attribute>
+		<Attribute name="MetadataObjectsCollections" id="6">
+			<Type/>
+		</Attribute>
+		<Attribute name="ShowMetadataObjectNames" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show Metadata Object Names</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать имена объектов метаданных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ShowMetadataObjectNames</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="MetadataObjectsToIgnore" id="4">
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ShowMetadataObjectRecordsNumber" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show Metadata Object Records Number</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать количество записей в объектах метаданных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ShowMetadataObjectRecordsNumber</Field>
+			</Save>
+		</Attribute>
+		<ConditionalAppearance>
+			<dcsset:item>
+				<dcsset:selection>
+					<dcsset:item>
+						<dcsset:field>MetadataObjectsTreePresentation</dcsset:field>
+					</dcsset:item>
+				</dcsset:selection>
+				<dcsset:filter>
+					<dcsset:item xsi:type="dcsset:FilterItemComparison">
+						<dcsset:left xsi:type="dcscor:Field">MetadataObjectsTree.EnableAuditLog</dcsset:left>
+						<dcsset:comparisonType>Equal</dcsset:comparisonType>
+						<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+					</dcsset:item>
+				</dcsset:filter>
+				<dcsset:appearance>
+					<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+						<dcscor:parameter>TextColor</dcscor:parameter>
+						<dcscor:value xsi:type="v8ui:Color">win:DisabledText</dcscor:value>
+					</dcscor:item>
+				</dcsset:appearance>
+			</dcsset:item>
+		</ConditionalAppearance>
+	</Attributes>
+	<Commands>
+		<Command name="SetDefaultMetadataSettings" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Set Default Metadata Settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить настройки метаданных по умолчанию</v8:content>
+				</v8:item>
+			</Title>
+			<Action>SetDefaultMetadataSettings</Action>
+		</Command>
+		<Command name="RefreshSettings" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh Settings</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить настройки</v8:content>
+				</v8:item>
+			</Title>
+			<Action>RefreshSettings</Action>
+		</Command>
+		<Command name="CollapseAllFields" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Collapse All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Collapse All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CollapseAllFields</Action>
+		</Command>
+		<Command name="ExpandAllFields" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Expand All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Expand All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть все</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ExpandAllFields</Action>
+		</Command>
+		<Command name="CheckAllFields" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все отметки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Check All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Установить все отметки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>CheckAllFields</Action>
+		</Command>
+		<Command name="UncheckAllFields" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Uncheck All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все отметки</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Uncheck All</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все отметки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>UncheckAllFields</Action>
+		</Command>
+		<Command name="EnableAuditLog" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Enable Audit Log</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить историю данных</v8:content>
+				</v8:item>
+			</Title>
+			<Action>EnableAuditLog</Action>
+		</Command>
+		<Command name="DisableAuditLog" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Disable Audit Log</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выключить историю данных</v8:content>
+				</v8:item>
+			</Title>
+			<Action>DisableAuditLog</Action>
+		</Command>
+	</Commands>
+</Form>
