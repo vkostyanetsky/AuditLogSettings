@@ -1,6 +1,6 @@
 # Настройки истории данных
 
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Обработка для настройки механизма истории данных. Написана для платформы 8.3.16; поддерживаются планы обмена, константы, справочники, документы, планы видов характеристик, планы счетов, планы видов расчета, регистры сведений, бизнес-процессы и задачи.
 
