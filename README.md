@@ -10,6 +10,8 @@ It is a data processor intended to customize data history mechanism of the 1C:En
 
 There is an interface in English and Russian. The code is in English. Logic is not based on BSP or SSLi (that means it will work in any self-written configuration without additional adaptation).
 
+Table of contents:
+
 - [Usage](#-usage)
 - [Hidden Features](#-hidden-features)
 - [Troubleshooting](#-troubleshooting)
