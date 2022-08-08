@@ -42,7 +42,7 @@ There are hidden elements on the data processor form that I found not particular
 
 ### Lack of Rights
 
-The data processor assumes that a user has the "Update data history settings" right for all configuration objects that it supports. If this is not true, it will fail.
+The data processor assumes that a user has the `Update data history settings` right for all configuration objects that it supports. If this is not true, it will fail.
 
 ### Old Platform
 
@@ -52,7 +52,9 @@ For example, for 8.3.12, you need to remove the definition of exchange plans and
 
 ### Service Objects
 
-By default, the data processor displays all objects for which history can be kept. However, there is no point in versioning many of them: for example, BSP's `MetadataObjectIdentifiers`, a huge stack of registers for RLS and other service tables. If you want to avoid stuffing your database with garbage, it is better not to give users the opportunity to enable history for such tables. In addition, if your configuration can work in service mode, then hiding all unshared objects from the interface of the data processor is an excellent idea.
+By default, the data processor displays all objects for which history can be kept. However, there is no point in versioning many of them: for example, BSP's `MetadataObjectIdentifiers`, a huge stack of registers for RLS and other service tables.
+
+Therefore, if you want to avoid stuffing your database with garbage, it is better not to give users the opportunity to enable history for such tables. In addition, if your configuration can work in service mode, then hiding all unshared objects from the interface of the data processor is an excellent idea.
 
 You can hide some objects by adding them to the MetadataObjectsToIgnore form attribute. This is a list of values. It can be filled, for example, when creating a form:
 
