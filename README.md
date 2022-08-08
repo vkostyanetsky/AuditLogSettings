@@ -10,7 +10,11 @@ It is a data processor intended to customize data history mechanism of the 1C:En
 
 There is an interface in English and Russian. The code is in English. Logic is not based on BSP or SSLi (that means it will work in any self-written configuration without additional adaptation).
 
-## How to use
+- [Usage](#-usage)
+- [Hidden Features](#-hidden-features)
+- [Troubleshooting](#-troubleshooting)
+
+## 🚀 Usage
 
 On the left side is the metadata tree. Only those metadata objects for which the platform can keep a history are displayed.
 
@@ -24,7 +28,7 @@ Available commands:
 - `Enable Audit Log` and `Disable Audit Log` work for selected objects, considering their hierarchy. For example, you can enable history for all objects in the Catalogs and Documents branches by selecting them and clicking `Enable Data History`.
 - `Set Default Metadata Settings` removes the settings of the data history mechanism from the infobase. Thereafter, the standard configuration settings defined by its developers will start working. Like on-off, this command works for selected objects.
 
-## Hidden Features
+## 💎 Hidden Features
 
 There are hidden elements on the data processor form that I found not particularly useful for an ordinary user. You can enable them with the standard `Change form` command.
 
@@ -32,19 +36,19 @@ There are hidden elements on the data processor form that I found not particular
 - `Show Metadata Object Names`. A checkbox in the footer of the form. If enabled, names will be displayed instead of object synonyms (and their attributes). It is convenient if you have a mess of synonyms, and it is hard to understand which history you turn on or off.
 - `Show Metadata Object Records`. A checkbox in the footer of the form. If enabled, the number of records will be displayed for each metadata object. Useful, if you need to quickly estimate the overhead of maintaining data history.
 
-## Possible problems
+## 🔧 Troubleshooting
 
-### Lack of rights
+### Lack of Rights
 
 The data processor assumes that a user has the "Update data history settings" right for all configuration objects that it supports. If this is not true, it will fail.
 
-### Old platform version
+### Old Platform
 
-If you have an outdated version of the platform, remove the definition of objects that your platform does not support from the DefineMetadataObjectsCollections() procedure.
+If you have an outdated version of the platform, remove the definition of objects that your platform does not support from the `DefineMetadataObjectsCollections()` procedure.
 
 For example, for 8.3.12, you need to remove the definition of exchange plans and constants. If this is not done, the data processor will throw errors every time it starts.
 
-### Service objects available
+### Service Objects
 
 By default, the data processor displays all objects for which history can be kept. However, there is no point in versioning many of them: for example, BSP's `MetadataObjectIdentifiers`, a huge stack of registers for RLS and other service tables. If you want to avoid stuffing your database with garbage, it is better not to give users the opportunity to enable history for such tables. In addition, if your configuration can work in service mode, then hiding all unshared objects from the interface of the data processor is an excellent idea.
 
@@ -55,13 +59,13 @@ MetadataObjectsToIgnore.Add(Metadata.InformationRegisters.AccessGroupTables.Full
 MetadataObjectsToIgnore.Add(Metadata.InformationRegisters.AccessGroupValues.FullName());
 ```
 
-### Standard requisites are not supported
+### Unsupported Requisites
 
 Currently, you cannot enable data history for:
 
-1. Details "Order" of any chart of accounts;
-2. The "Line Number" attribute of the tabular part of any business process.
+1. The `Order` attribute of any chart of accounts;
+2. The `Line Number` attribute of any tabular part of any business process.
 
 Why? Have no clue. There is no single word about this in the documentation, and the platform just indifferently throws an exception. Most likely, its developers will fix this soon.
 
-So far, I have disabled working with these details in the code, so the data processor ignores them and does not display them in the details tree. If you need to override this behavior, remove the If / EndIf blocks with code that calls the IsStandardAttributeWithName() function.
+So far, I have disabled working with these details in the code, so the data processor ignores them and does not display them in the details tree. If you need to override this behavior, remove the `If` / `EndIf` blocks with code that calls the `IsStandardAttributeWithName()` function.
