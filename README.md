@@ -4,7 +4,7 @@
 
 [Read this page in Russian](README-ru.md)
 
-It data processor to customize data history mechanism. Written for 8.3.16; supports exchange plans, constants, catalogs, documents, charts of characteristic types, charts of accounts, charts of compensation types, information registers, business processes and tasks.
+It is a data processor intended to customize data history mechanism of the 1C:Enterprise platform. Written for the 8.3.16 version; supports exchange plans, constants, catalogs, documents, charts of characteristic types, charts of accounts, charts of compensation types, information registers, business processes and tasks.
 
 ![Data History Settings (FirstBIT ERP)](Images/DataHistorySettings.png "Data History Settings (FirstBIT ERP)")
 
