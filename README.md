@@ -1,65 +1,67 @@
-# Настройки истории данных
+# Audit Log Settings
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Обработка для настройки механизма истории данных. Написана для платформы 8.3.16; поддерживаются планы обмена, константы, справочники, документы, планы видов характеристик, планы счетов, планы видов расчета, регистры сведений, бизнес-процессы и задачи.
+[Read this page in Russian](README-ru.md)
+
+It data processor to customize data history mechanism. Written for 8.3.16; supports exchange plans, constants, catalogs, documents, charts of characteristic types, charts of accounts, charts of compensation types, information registers, business processes and tasks.
 
 ![Data History Settings (FirstBIT ERP)](Images/DataHistorySettings.png "Data History Settings (FirstBIT ERP)")
 
-Есть русский и английский интерфейс. Код — на английском языке. Логика не опирается на БСП или SSLi (то есть будет работать в любой самописке без дополнительной адаптации).
+There is an interface in English and Russian. The code is in English. Logic is not based on BSP or SSLi (that means it will work in any self-written configuration without additional adaptation).
 
-## Как пользоваться
+## How to use
 
-В левой части — дерево метаданных. Отображаются только те объекты метаданных, для которых платформа может вести историю.
+On the left side is the metadata tree. Only those metadata objects for which the platform can keep a history are displayed.
 
-Обработка читает настройки сначала из метаданных, потом — из информационной базы. Затем она определяет, для каких объектов история данных не ведется, и выделяет их в дереве серым цветом.
+The data processor reads the settings from the metadata firstly, then from the infobase. Then it determines which objects do not have data history and marks gray.
 
-При выборе объекта настройки для него выводятся в панели справа. В ней можно включить или отключить историю для всего объекта, а также для каждого реквизита в отдельности, если они есть у объекта (у констант, например, нет).
+When an object is selected, the settings for it are displayed in the panel on the right side. There you can enable or disable the history for the entire object, as well as for each attribute separately, if the object has them (for example, constants do not).
 
-Доступные команды:
+Available commands:
 
-- `Обновить настройки` строит дерево объектов метаданных и определяет их настройки. Эта операция выполняется при каждом запуске обработки. Может занимать приличное время (чем больше объектов в конфигурации — тем больше времени нужно).
-- `Включить историю данных` и `Выключить историю данных` работают для выделенных объектов с учетом их иерархии. Например, можно включить историю для всех объектов в ветках «Справочники» и «Документы», выделив их и нажав «Включить историю данных».
-- `Установить настройки метаданных по умолчанию` удаляет настройки механизма истории данных из информационной базы. После этого начнут работать стандартные настройки конфигурации, определенными её разработчиками. Как и включение-выключение, эта команда работает для выделенных объектов.
+- `Refresh Settings` builds a tree of metadata objects and defines their settings. This operation is performed each time the data processor starts. It can take a decent amount of time (the more objects in the configuration, the more time it takes).
+- `Enable Audit Log` and `Disable Audit Log` work for selected objects, considering their hierarchy. For example, you can enable history for all objects in the Catalogs and Documents branches by selecting them and clicking `Enable Data History`.
+- `Set Default Metadata Settings` removes the settings of the data history mechanism from the infobase. Thereafter, the standard configuration settings defined by its developers will start working. Like on-off, this command works for selected objects.
 
-## Скрытые возможности
+## Hidden Features
 
-На форме обработки есть скрытые элементы, которые я посчитал не особенно полезными для пользователя. Вы можете включить их стандартной командой `Изменить форму`. 
+There are hidden elements on the data processor form that I found not particularly useful for an ordinary user. You can enable them with the standard `Change form` command.
 
-- `Картинка настроек информационной базы`. Колонка дерева объектов метаданных. В ней будет отображаться шестеренка для тех объектов, у которых в информационной базе есть хоть какие-то настройки истории данных. Удобно, если вам нужно понять, для каких объектов поведение истории данных отличается от того, что заложил разработчик.
-- `Показывать имена объектов метаданных`. Чекбокс в подвале формы. Если включен — вместо синонимов объектов (и их реквизитов) будут выводиться наименования. Удобно, если у вас бардак в синонимах и вы не можете понять, историю чего включаете или выключаете.
-- `Показывать количество записей в объектах метаданных`. Чекбокс в подвале формы. Если включен — для каждого объекта метаданных будет выведено количество записей. Удобно, если вам нужно быстро оценить накладные расходы на ведение истории данных.
+- `Infobase Settings Picture`. A column of the tree of metadata objects. It will display a gear for those objects that have at least some data history settings in the infobase. It is convenient if you need to understand for which objects the behavior of the data history differs from what the developer has set by default.
+- `Show Metadata Object Names`. A checkbox in the footer of the form. If enabled, names will be displayed instead of object synonyms (and their attributes). It is convenient if you have a mess of synonyms, and it is hard to understand which history you turn on or off.
+- `Show Metadata Object Records`. A checkbox in the footer of the form. If enabled, the number of records will be displayed for each metadata object. Useful, if you need to quickly estimate the overhead of maintaining data history.
 
-## Возможные проблемы
+## Possible problems
 
-### Недостаток прав
+### Lack of rights
 
-Обработка предполагает, что у пользователя есть право «Изменение настроек истории данных» для всех объектов конфигурации, которые она поддерживает. Если это не так — будет глючить.
+The data processor assumes that a user has the "Update data history settings" right for all configuration objects that it supports. If this is not true, it will fail.
 
-### Старая версия платформы
+### Old platform version
 
-Если у вас устаревшая версия платформы, удалите из процедуры DefineMetadataObjectsCollections() определение объектов, которые ваша платформа не поддерживает. 
+If you have an outdated version of the platform, remove the definition of objects that your platform does not support from the DefineMetadataObjectsCollections() procedure.
 
-Например, для 8.3.12 нужно удалить определение планов обмена и констант. Если этого не сделать, обработка будет сыпать ошибками при каждом запуске.
+For example, for 8.3.12, you need to remove the definition of exchange plans and constants. If this is not done, the data processor will throw errors every time it starts.
 
-### Доступны служебные объекты
+### Service objects available
 
-По умолчанию обработка отображает все объекты, для которых можно вести историю. Однако многие из них нет никакого смысла версионировать: например, БСП'шный `ИдентификаторыОбъектовМетаданных`, целый ворох регистров для RLS и другие служебные таблицы. Если не хотите забивать базу мусором — лучше не давать пользователям возможности включать историю для таких таблиц. Кроме того, если ваша конфигурация может работать в режиме сервиса, то скрыть из обработки все неразделенные объекты — исключительно хорошая идея.
+By default, the data processor displays all objects for which history can be kept. However, there is no point in versioning many of them: for example, BSP's `MetadataObjectIdentifiers`, a huge stack of registers for RLS and other service tables. If you want to avoid stuffing your database with garbage, it is better not to give users the opportunity to enable history for such tables. In addition, if your configuration can work in service mode, then hiding all unshared objects from the interface of the data processor is an excellent idea.
 
-Скрыть часть объектов можно, добавив их в реквизит формы MetadataObjectsToIgnore. Это список значений — его можно заполнять, например, при создании формы:
+You can hide some objects by adding them to the MetadataObjectsToIgnore form attribute. This is a list of values. It can be filled, for example, when creating a form:
 
 ```
 MetadataObjectsToIgnore.Add(Metadata.InformationRegisters.AccessGroupTables.FullName());
 MetadataObjectsToIgnore.Add(Metadata.InformationRegisters.AccessGroupValues.FullName());
-```    
+```
 
-### Не поддерживаются стандартные реквизиты
+### Standard requisites are not supported
 
-Нельзя включить историю данных для:
+Currently, you cannot enable data history for:
 
-1. Реквизита «Порядок» любого плана счетов;
-2. Реквизита «НомерСтроки» табличной части любого бизнес-процесса.
+1. Details "Order" of any chart of accounts;
+2. The "Line Number" attribute of the tabular part of any business process.
 
-Почему — неизвестно. В документации про это ни слова, а платформа просто молча генерит исключение. Скорее всего, разработчики платформы это вскоре исправят.
+Why? Have no clue. There is no single word about this in the documentation, and the platform just indifferently throws an exception. Most likely, its developers will fix this soon.
 
-Пока что я отключил работу с этими реквизитами в коде — обработка игнорирует их и не выводит в дереве реквизитов. Если вам нужно отменить это решение, удалите из кода блоки If / EndIf, в условиях которых вызывается функция IsStandardAttributeWithName().
+So far, I have disabled working with these details in the code, so the data processor ignores them and does not display them in the details tree. If you need to override this behavior, remove the If / EndIf blocks with code that calls the IsStandardAttributeWithName() function.
