@@ -18,7 +18,7 @@ Table of contents:
 
 ## 🚀 Usage
 
-On the left side is the metadata tree. Only those metadata objects for which the platform can keep a history are displayed.
+Have a look on the left side. It is metadata tree. Only those objects for which the platform can keep a history are displayed.
 
 The data processor reads the settings from the metadata firstly, then from the infobase. Then it determines which objects do not have data history and marks gray.
 
