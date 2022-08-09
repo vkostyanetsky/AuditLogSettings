@@ -63,7 +63,7 @@ MetadataObjectsToIgnore.Add(Metadata.InformationRegisters.AccessGroupTables.Full
 MetadataObjectsToIgnore.Add(Metadata.InformationRegisters.AccessGroupValues.FullName());
 ```
 
-### Unsupported Requisites
+### Unsupported Attributes
 
 Currently, you cannot enable data history for:
 
